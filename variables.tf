@@ -11,15 +11,12 @@ variable ip_on_launch {
 }
 
 variable port {
-    type = list(object({
-        from_port = number
-        to_port = number
-    }))
+    type = list
 }
 
-variable subnet {
-    type = list(object( {
-        cidr = string
-        subnet_name = string
-    }))
+variable "subnet" {
+  type = list(object({
+    cidr = string
+    subnet_name = string
+  }))
 }
